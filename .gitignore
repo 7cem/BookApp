@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+.env
+instance/
+
+# Docker
+pgdata/
+*.db
+
+# Logs
+*.log
+
+# Editors & OS
+.vscode/
+.idea/
+.DS_Store
