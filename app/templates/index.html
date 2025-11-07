@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BookApp</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="brand">BookApp</h1>
+        <p class="tagline">A minimal, friendly UI for your Book REST API</p>
+      </header>
+
+      <nav class="tabs" role="tablist">
+        <button
+          class="tab active"
+          data-tab="list"
+          role="tab"
+          aria-selected="true"
+        >
+          Books
+        </button>
+        <button class="tab" data-tab="add" role="tab" aria-selected="false">
+          Add Book
+        </button>
+      </nav>
+
+      <main>
+        <section id="tab-list" class="page page--active" aria-hidden="false">
+          <h2>Books</h2>
+          <div id="books"></div>
+        </section>
+
+        <section id="tab-add" class="page" aria-hidden="true">
+          <h2>Add a book</h2>
+          <form id="addForm" class="form-inline">
+            <input id="title" placeholder="Title" required />
+            <input id="author" placeholder="Author" required />
+            <button type="submit" class="btn btn-primary">Add Book</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

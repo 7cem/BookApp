@@ -1,8 +1,14 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from app import db
 from app.models import Book
 
 main = Blueprint('main', __name__)
+
+
+@main.route("/", methods=["GET"])
+def index():
+    """Serve the single-page UI for interacting with the books API."""
+    return render_template('index.html')
 
 @main.route("/books", methods=["GET"])
 def get_books():

@@ -1,0 +1,173 @@
+/* Basic styles for BookApp UI */
+:root {
+  --bg: #f7f9fc;
+  --card: #fff;
+  --accent: #2b7cff;
+  --muted: #6b7280;
+  --accent-2: #7c3aed; /* purple */
+  --accent-3: #06b6d4; /* teal */
+  --danger: #ef4444;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: #111;
+  margin: 0;
+  padding: 24px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+header h1 {
+  margin: 0 0 4px;
+}
+header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Brand styling */
+.brand {
+  margin: 0;
+  font-size: 1.8rem;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-2),
+    var(--accent-3)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tagline {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+.tab {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+}
+.tab:hover {
+  transform: translateY(-1px);
+}
+.tab.active {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.12);
+}
+
+main {
+  margin-top: 16px;
+}
+
+.page {
+  display: none;
+  background: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+}
+.page--active {
+  display: block;
+}
+
+/* Form and buttons */
+.form-inline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.form-inline input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: var(--muted);
+}
+.btn-danger {
+  background: linear-gradient(90deg, #fb7185, var(--danger));
+  color: #fff;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.book:last-child {
+  border-bottom: 0;
+}
+.book .meta {
+  flex: 1;
+}
+.book .meta b {
+  display: block;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+.controls button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+.controls .edit {
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  color: #fff;
+}
+.controls .delete {
+  background: linear-gradient(90deg, #fb7185, var(--danger));
+  color: #fff;
+}
+
+.editing input {
+  padding: 6px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+.empty {
+  color: var(--muted);
+  padding: 8px;
+}
